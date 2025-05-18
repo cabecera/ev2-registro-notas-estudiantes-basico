@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const inputNombre = document.getElementById('nombre');
+
+        inputNombre.addEventListener('invalid', function (event) {
+            // No llamamos a event.preventDefault() para que la burbuja aparezca
+            if (!inputNombre.validity.valid) {
+                inputNombre.setCustomValidity('Por favor ingresa tu nombre completo.');
+            } else {
+                inputNombre.setCustomValidity('');
+            }
+        });
+
+        inputNombre.addEventListener('input', function (event) {
+            inputNombre.setCustomValidity('');
+        });
+    </script>
+
+</body>
+
+</html>
