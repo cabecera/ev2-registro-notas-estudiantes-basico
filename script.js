@@ -47,15 +47,24 @@ document.getElementById("studentForm").addEventListener("submit", function (e) {
 
 //funcion
 //Crea una fila a la tabla
-
-function addStudentToTable(student) {
+function addStudentToTable(estudiante) {
     const row = document.createElement("tr");
     row.innerHTML = //innerHTML para insertar tres columnas: nombre, apellido, nota.
     `
-        <td>${student.name}</td>
-        <td>${student.lastName}</td>
-        <td>${student.grade}</td>
+        <td>${estudiante.name}</td>
+        <td>${estudiante.lastName}</td>
+        <td>${estudiante.grade}</td>
     `;
     tableBody.appendChild(row); //Añade esa fila al cuerpo de la tabla studentsTable.
 }
 
+function calcularPromedio() {
+    if (estudiantes.length === 0) {
+        averageDiv.textContent = "Promedio General del Curso : N/A"; //Si no hay estudiantes, muestra n/a.
+        return;
+    }
+    const total = estudiantes.reduce((sum, estudiante) => sum + estudiante.grade, 0); //sumar todas las nota
+    const prom = total / estudiantes.length;
+    averageDiv.textContent = "Promedio General del Curso : " + prom.toFixed(2);
+    //Muestra el resultado con 2 decimales usando .toFixed(2).
+}
