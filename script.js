@@ -18,10 +18,7 @@ document.getElementById("studentForm").addEventListener("submit", function (e) {
 
     //validacion de datos
 
-    if(!name || !lastName || isNaN(grade) || grade<1 || grade>7){
-        alert("Error al ingresar Datos")
-        return
-    }
+
 
 
     //guarda el estudiante

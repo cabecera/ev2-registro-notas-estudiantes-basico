@@ -1,36 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<form id="studentForm">
+  <input type="text" id="name" required>
+  <input type="submit" value="Enviar">
+</form>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<script>
+document.getElementById("name").addEventListener("invalid", function () {
+  this.setCustomValidity("Por favor, ingresa tu nombre.");
+});
 
-<body>
-    <form id="miFormulario">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <button type="submit">Enviar</button>
-    </form>
-
-    <script>
-        const inputNombre = document.getElementById('nombre');
-
-        inputNombre.addEventListener('invalid', function (event) {
-            // No llamamos a event.preventDefault() para que la burbuja aparezca
-            if (!inputNombre.validity.valid) {
-                inputNombre.setCustomValidity('Por favor ingresa tu nombre completo.');
-            } else {
-                inputNombre.setCustomValidity('');
-            }
-        });
-
-        inputNombre.addEventListener('input', function (event) {
-            inputNombre.setCustomValidity('');
-        });
-    </script>
-
-</body>
-
-</html>
+document.getElementById("name").addEventListener("input", function () {
+  this.setCustomValidity(""); // Limpia el mensaje personalizado cuando el usuario escribe
+});
+</script>

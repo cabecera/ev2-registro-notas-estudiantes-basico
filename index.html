@@ -15,16 +15,42 @@
 
 		<div>
 			<label for="name"> Nombre:  </label>
-			<input type="text" id="name" >
+			<input type="text" id="name" required>
 		</div>
 		<div>
 			<label for="lastName">Apellido: </label>
-			<input type="text" id="lastName" >
+			<input type="text" id="lastName" required>
 		</div>
 		<div>
 			<label for="grade">Nota: </label>
-			<input type="number" id="grade" step="0.1" min="1" max="7" >
+			<input type="number" id="grade" step="0.1" min="1" max="7" required >
 		</div>
+
+		<script>
+			//Nombre
+			document.getElementById("name").addEventListener("invalid", function () {
+				this.setCustomValidity("Por favor, complete el campo 'Nombre'.");
+			});
+			document.getElementById("name").addEventListener("input", function () {
+				this.setCustomValidity("");
+			});
+			// Apellido
+			document.getElementById("lastName").addEventListener("invalid", function () {
+				this.setCustomValidity("Por favor, complete el campo 'Apellido'.");
+			});
+			document.getElementById("lastName").addEventListener("input", function () {
+				this.setCustomValidity(""); //
+			});
+			// Grade
+			document.getElementById("grade").addEventListener("invalid", function () {
+				this.setCustomValidity("Por favor, ingrese una nota válida entre 1.0 y 7.0.");
+			});
+			document.getElementById("grade").addEventListener("input", function () {
+				this.setCustomValidity("");
+			});
+		</script>
+
+
 		<button type="submit">Guardar Alumno</button>
 	</form>
 	<table id="studentsTable" border="1" cellpadding="8" cellspacing="0">
