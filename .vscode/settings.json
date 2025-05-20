@@ -1,0 +1,137 @@
+{
+    /* ======================= */
+    /*      APARIENCIA         */
+    /* ======================= */
+
+    // Tema de iconos para el Workbench
+    "workbench.iconTheme": "material-icon-theme",
+
+    // Usa los iconos de Octicons en el workbench
+    "workbench.productIconTheme": "icons-octicons",
+
+    // Ubica la barra de actividades en la parte superior
+    "workbench.activityBar.location": "top",
+
+    // Ubica la barra lateral a la derecha
+    "workbench.sideBar.location": "right",
+
+    // Permite alternar la visibilidad de la barra de menú con la tecla "Alt"
+    "window.menuBarVisibility": "toggle",
+
+    // Desactiva el centro de comandos en la barra de título
+    "window.commandCenter": false,
+
+    // Desactiva el control de diseño en la barra de estado
+    "workbench.layoutControl.enabled": false,
+
+    //Habilitar bordes en el cursor para mejor visibilidad
+    "editor.cursorSurroundingLines": 2,
+
+    //Eliminar espacios en blanco al guardar
+    "files.trimTrailingWhitespace": true,
+
+    /* ======================= */
+    /*       EDITOR            */
+    /* ======================= */
+
+    // Desactiva el resaltado de los corchetes coincidentes
+    "editor.matchBrackets": "never",
+
+    // Tamaño de la fuente en el editor
+    "editor.fontSize": 18,
+
+    // Configuración de la familia de fuentes en el editor
+    "editor.fontFamily": "JetBrains Mono light, 'Courier New', monospace",
+
+    // Desactiva el minimapa en el editor
+    "editor.minimap.enabled": false,
+
+    // Barra de desplazamiento vertical automática en el editor
+    "editor.scrollbar.vertical": "auto",
+
+    // Desactiva el borde de la regla de visión general (overview ruler)
+    "editor.overviewRulerBorder": false,
+
+    // Oculta el cursor en la overview ruler
+    "editor.hideCursorInOverviewRuler": true,
+
+    // Animación de desplazamiento del cursor
+    "editor.cursorSmoothCaretAnimation": "explicit",
+
+    // Estilo de parpadeo del cursor
+    "editor.cursorBlinking": "expand",
+
+    // Habilita soporte de accesibilidad en el editor
+    "editor.accessibilitySupport": "off",
+
+    // Habilita la edición vinculada (por ejemplo, etiquetas en HTML)
+    "editor.linkedEditing": true,
+
+    // Usa un conjunto de colores independientes para cada tipo de par de corchetes
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+
+    /* ======================= */
+    /*       TERMINAL          */
+    /* ======================= */
+
+    // Usa Git Bash como terminal predeterminada en Windows
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+
+    // Tamaño de la fuente en la terminal integrada
+    "terminal.integrated.fontSize": 16,
+
+    // Fuente utilizada en la terminal integrada
+    "terminal.integrated.fontFamily": "JetBrains mono",
+
+    // Estilo del cursor en la terminal
+    "terminal.integrated.cursorStyle": "line",
+
+    // Desactiva la advertencia de pegado de múltiples líneas en la terminal
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+
+    //Habilitar el "Ctrl + C" para copiar sin cerrar procesos(seleccionar con cursor)
+    "terminal.integrated.copyOnSelection": true,
+
+    //Desplazamiento ilimitado en la terminal - VER HISTORIAL COMPLETO
+    "terminal.integrated.scrollback": 10000,
+
+    //Mostrar el nombre de la rama actual en la barra de estado
+    "git.branchProtection": ["main", "master"],
+
+    /* ======================= */
+    /*       GIT & PLUGINS     */
+    /* ======================= */
+
+    // Habilita la actualización automática de los repositorios de Git
+    "git.autofetch": true,
+
+    // Desactiva el indicador de GitLens en la barra de estado
+    "gitlens.launchpad.indicator.enabled": false,
+
+    // No mostrar mensajes informativos de Live Server
+    "liveServer.settings.donotShowInfoMsg": true,
+
+    //Ocultar los archivos .gitignore en el explorador
+    "explorer.excludeGitIgnore": true,
+
+    /* ======================= */
+    /*       OTRAS OPCIONES    */
+    /* ======================= */
+
+    // Asociación de archivos .docx con su aplicación predeterminada
+    "workbench.editorAssociations": {
+        "*.docx": "default"
+    },
+
+    // No mostrar ningún editor en la pantalla de inicio
+    "workbench.startupEditor": "none",
+
+    /* ======================= */
+    /*       PRODUCTIVIDAD     */
+    /* ======================= */
+
+    //Habilitar el autoguardado de archivos
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000  // Guarda después de 3 segundo de inactividad
+
+}

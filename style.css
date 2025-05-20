@@ -68,7 +68,7 @@ input[type="number"]{
     border-radius: 4px;
     margin-left: 35px;
 }
-button {
+#botonGeneral {
     padding: 10px;
     border: none;
     background-color: #1366be;
@@ -79,7 +79,36 @@ button {
     margin-top: 10px;
     margin-right: 65%;
     width: 100%;
-    max-width: 143px;
+    max-width: 144px;
+}
+
+#botonEliminar{
+    padding: 10px;
+    border: none;
+    background-color: #c00808;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 65%;
+    width: 100%;
+    max-width: 10px;
+}
+
+
+#botonModificar{
+    padding: 10px;
+    border: none;
+    background-color: #2fe526;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 65%;
+    width: 100%;
+    max-width: 10px;
 }
 
 
