@@ -39,8 +39,27 @@ function addStudentToTable(estudiante) {
         `
     <td>${estudiante.name}</td>
     <td>${estudiante.lastName}</td>
-    <td>${estudiante.grade}</td>`;
+    <td>${estudiante.grade}</td>
+    <td>
+        <button class="delete-btn">Eliminar</button>    
+    </td>
+        `;
+
+        row.querySelector(".delete-btn").addEventListener("click", function()
+        {borrarEstudiante(estudiante,row);
+
+        })
+
     tablaBody.appendChild(row); //Añade esa fila al cuerpo de la tabla studentsTable.
+}
+
+function borrarEstudiante(estudiante,row){
+    const index = estudiantes.indexOf(estudiante);
+        if (index > -1) {
+            estudiantes.splice(index,1);
+            row.remove();
+            calcularPromedio();
+    }
 }
 
 function calcularPromedio() {
