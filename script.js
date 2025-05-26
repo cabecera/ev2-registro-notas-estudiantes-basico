@@ -41,8 +41,10 @@ function addStudentToTable(estudiante) {
     <td>${estudiante.lastName}</td>
     <td>${estudiante.grade}</td>
     <td>
+        <div class="botones-accion">
         <button id=botonEliminar class="delete-btn">Eliminar</button>
         <button id=botonModificar class="update-btn">Modificar</button>
+        </div>
     </td>
         `;
 
@@ -50,6 +52,10 @@ function addStudentToTable(estudiante) {
         {borrarEstudiante(estudiante,row);
 
         })
+        row.querySelector(".update-btn").addEventListener("click", function ()
+        {modificarEstudiante(estudiante, row);
+
+        });
 
     tablaBody.appendChild(row); //Añade esa fila al cuerpo de la tabla studentsTable.
 }
@@ -62,6 +68,21 @@ function borrarEstudiante(estudiante,row){
             calcularPromedio();
     }
 }
+
+//Agregar datos en el formulario
+function modificarEstudiante(estudiante, row) {
+    // Cargar los datos al formulario
+    document.getElementById("name").value = estudiante.name;
+    document.getElementById("lastName").value = estudiante.lastName;
+    document.getElementById("grade").value = estudiante.grade;
+
+    // Guardar referencia global para edición
+    estudianteEnEdicion = { estudiante, row };
+
+    // Cambiar texto del botón
+    document.getElementById("botonGeneral").textContent = "Guardar Cambios";
+}
+
 
 function calcularPromedio() {
     if (estudiantes.length === 0) {

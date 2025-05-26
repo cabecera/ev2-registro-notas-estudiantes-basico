@@ -82,7 +82,7 @@ input[type="number"]{
     max-width: 144px;
 }
 
-#botonEliminar{
+#botonEliminar {
     padding: 10px;
     border: none;
     background-color: #c00808;
@@ -90,14 +90,12 @@ input[type="number"]{
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
-    margin-right: 65%;
+    margin: 5px;
     width: 100%;
-    max-width: 10px;
+    max-width: 143px;
 }
 
-
-#botonModificar{
+#botonModificar {
     padding: 10px;
     border: none;
     background-color: #2fe526;
@@ -105,11 +103,16 @@ input[type="number"]{
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
-    margin-right: 65%;
+    margin: 5px;
     width: 100%;
-    max-width: 10px;
+    max-width: 143px;
 }
+.botones-accion {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
 
 
 table {
