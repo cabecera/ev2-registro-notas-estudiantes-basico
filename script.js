@@ -8,6 +8,11 @@ const tablaBody = document.querySelector("#studentsTable tbody");
 
 const promedioDiv = document.getElementById("average") //Selecicona el div donde se mostrara el prom. grl
 
+
+const passedCountSpan = document.getElementById("passedCount");
+const failedCountSpan = document.getElementById("failedCount");
+const countStudents = document.getElementById("Count");
+
 //Formulario
 document.getElementById("studentForm").addEventListener("submit", function (e) {
     e.preventDefault(); //(no recarga la página al apretar el boton).
@@ -27,6 +32,7 @@ document.getElementById("studentForm").addEventListener("submit", function (e) {
     estudiantes.push(estudiante);
     addStudentToTable(estudiante) //anade visualmente a la tabla.
     calcularPromedio(); //Llama a la funcion que calcula y actualiza el promedio general.
+    calcularEstadisticasAprobacion();
     this.reset() //Limpia campos
 
 });
@@ -66,6 +72,7 @@ function borrarEstudiante(estudiante,row){
             estudiantes.splice(index,1);
             row.remove();
             calcularPromedio();
+            calcularEstadisticasAprobacion();
     }
 }
 
@@ -93,4 +100,27 @@ function calcularPromedio() {
     const prom = total / estudiantes.length;
     promedioDiv.textContent = "Promedio General del Curso : " + prom.toFixed(2);
     //Muestra el resultado con 2 decimales usando .toFixed(2).
+}
+
+
+function calcularEstadisticasAprobacion() {
+    let aprobados = 0;
+    let reprobados = 0;
+    let total = 0;
+
+    estudiantes.forEach(estudiante => {
+        if (estudiante.grade >= 4.0) {
+            aprobados++;
+            total ++;
+        } else {
+            reprobados++;
+            total ++;
+        }
+
+    });
+
+    passedCountSpan.textContent = `Aprobados: ${aprobados}`;
+    failedCountSpan.textContent = `Reprobados: ${reprobados}`;
+    countStudents.textContent = `Total:${total}`;
+
 }
